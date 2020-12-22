@@ -12,9 +12,9 @@ const Student = (props) => {
     const [students, setStudents] = useState([
         {
             id: 1,
-            name: "qw fdfe",
-            email: "sdfggh@wwwww.com",
-            supervisor: 1,
+            name: "John cena",
+            email: "cena@john.com",
+            supervisor: 2,
         },
 
     ]);
