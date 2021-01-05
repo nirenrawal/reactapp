@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./student.css";
 
@@ -6,7 +6,7 @@ const Student = (props) => {
     const [student, setStudent] = useState({
         name: "",
         email: "",
-        supervisor: "",
+        supervisorId: "",
     });
 
     const [students, setStudents] = useState([
@@ -14,11 +14,26 @@ const Student = (props) => {
             id: 1,
             name: "John cena",
             email: "cena@john.com",
-            supervisor: 2,
+            supervisorId: 2,
+        },
+        {
+            id: 2,
+            name: "Jocker Man",
+            email: "jocker@john.com",
+            supervisorId: 2,
         },
 
     ]);
 
+
+    useEffect(() => {
+        const fetchData = () => {
+          fetch("http://localhost:4455/api/students")
+            .then((response) => response.json())
+            .then((data) => console.log(data));
+       };
+       fetchData();
+      }, []);
 
     const handleChange = (event) => {
         //console.log(event.target.name);
